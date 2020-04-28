@@ -2,7 +2,7 @@
   <div id="app">
     <div class="las-nav">
       <div class="las-link">
-        <router-link to="/">Home</router-link>
+        <router-link to="/">Главная</router-link>
       </div>
       <div class="las-link">
         <router-link to="/tests">Зачеты</router-link>
@@ -17,7 +17,13 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  name: "Main",
+  mounted() {
+  },
+};
+</script>
 <style lang="scss">
 a:active {
   color: white !important;
@@ -39,6 +45,6 @@ a:hover {
   height: 100px;
   text-align: center;
   background-color: rgb(180, 0, 0);
-  font-size: 300%
+  font-size: 300%;
 }
 </style>
