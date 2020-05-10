@@ -47,16 +47,16 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    news(state) {
+    news: (state) => {
       return state.news;
     },
-    timetable(state) {
+    timetable: (state) => {
       return state.timetable;
     },
-    homework(state) {
+    homework: (state) => {
       return state.homework;
     },
-    tests(state) {
+    tests: (state) => {
       return state.tests;
     },
   },
