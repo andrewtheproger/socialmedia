@@ -4,17 +4,11 @@ var conn = mongoose.createConnection(
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 const timetable = new mongoose.Schema({
-  date: {
-    type: String,
-    required: true,
-  },
-  subject: {
-    type: String,
-    required: true,
-  },
-  checking: {
-    type: String,
-    required: true,
-  },
+  monday: [String],
+  tuesday: [String],
+  wednesday: [String],
+  thursday: [String],
+  friday: [String],
+  saturday: [String],
 });
-module.exports = conn.model("Test", timetable);
+module.exports = conn.model("Timetable", timetable);

@@ -1,21 +1,29 @@
 <template>
-  <div class="las-app">
-    
-  </div>
+  <div class="las-app"></div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
-  name: 'Main',
-  data(){
+  name: "Main",
+  methods: {
+    ...mapActions(["getTests", "getHomework", "getTimetable", "getNews"]),
+  },
+  computed: mapGetters(["news", "timetable", "tests", "homework"]),
+  data() {
     return {
 
-    }
-  }
-}
+    };
+  },
+  mounted() {
+    this.getTests();
+    this.getHomework();
+    this.getTimetable();
+    this.getNews();
+    console.log(this);
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

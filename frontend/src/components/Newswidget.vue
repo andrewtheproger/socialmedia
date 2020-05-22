@@ -10,10 +10,11 @@
   </div>
 </template>
 <script>
+import mapGetters from 'vuex'
 export default {
   name: "Newswidget",
-  props: ["news"],
   methods: {},
+  computed: mapGetters(['news'])
 };
 </script>
 <style lang="scss">

@@ -7,18 +7,19 @@
             ? !rusToEng(lesson)
               ? tests[rusToEng(lesson)]
               : ""
-            : `Первая группа: ${
-                tests[rusToEng(lesson)[0]]
-              }, Вторая группа: ${tests[rusToEng(lesson)[1]]}`
+            : `Первая группа: ${tests[rusToEng(lesson)[0]]}, Вторая группа: ${
+                tests[rusToEng(lesson)[1]]
+              }`
         }}
       </li>
     </ul>
   </div>
 </template>
 <script>
+import mapGetters from "vuex";
 export default {
   name: "Homeworkwidget",
-  props: ["timetable", "tests"],
+  computed: mapGetters(["timetable", "tests"]),
   methods: {
     rusToEng(subj) {
       switch (subj) {

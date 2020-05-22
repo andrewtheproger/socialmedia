@@ -8,7 +8,6 @@ const Test = require("./models/test");
 const News = require("./models/news");
 
 const Timetable = require("./models/timetable");
-
 const Homework = require("./models/homework");
 
 app.use(cors());
@@ -36,7 +35,7 @@ app.post("/tests", jsonParser, async function (req, res, next) {
 });
 app.get("/news/:id", async function (req, res, next) {
   try {
-    res.json(await Test.findById(req.params.id));
+    res.json(await News.findById(req.params.id));
   } catch (err) {
     console.error(err);
     next();
@@ -79,7 +78,9 @@ app.post("/homework", async function (req, res, next) {
 });
 app.get("/timetable", async function (req, res, next) {
   try {
-    res.json(await Timetable.find());
+    console.log( await Timetable.find({}));
+    const timetable = await Timetable.find({});
+    res.json(timetable)
   } catch (err) {
     console.error(err);
     next();

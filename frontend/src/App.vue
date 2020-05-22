@@ -15,24 +15,35 @@
       </div>
     </div>
     <router-view />
+    <footer>
+      <a href="https://vk.com/andreobokhonov">Техподдержка</a>
+      <p>Разработка ЛПН, 2020</p>
+    </footer>
   </div>
 </template>
 <script>
+
 export default {
-  name: "Main",
+  name: "App",
+  
   mounted() {
+    
   },
 };
 </script>
 <style lang="scss">
-a:active {
-  color: white !important;
-}
-a:visited {
-  color: white !important;
-}
-a:hover {
-  color: white !important;
+@import "config.scss";
+a {
+  color: white;
+  &:hover {
+    color: white;
+  }
+  &:visited {
+    color: white;
+  }
+  &:active {
+    color: white;
+  }
 }
 .las-nav {
   display: flex;
@@ -46,5 +57,13 @@ a:hover {
   text-align: center;
   background-color: rgb(180, 0, 0);
   font-size: 300%;
+}
+footer {
+  background-color: rgb(180, 0, 0);
+  text-align: center;
+  font-size: 32px;
+  p {
+    color: white;
+  }
 }
 </style>
